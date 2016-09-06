@@ -1,0 +1,41 @@
+<div id="all">
+
+  <div id="content">
+    <div class="container">
+
+      <div class="col-md-12">
+
+        <ul class="breadcrumb">
+          <li>
+            <%= link_to "首页", root_url %>
+          </li>
+          <li>登录</li>
+        </ul>
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="box">
+          <div class="center">
+            <h3>用户登录</h3>
+          </div>
+          <hr>
+          <%= form_for(:session, url: login_path ) do |f| %>
+
+          <%= f.label :email, "邮箱" %>
+          <%= f.email_field :email, class: "form-group form-control" %>
+          <%= f.label :password, "密码" %>
+          <%= f.password_field :password, class: "form-group form-control" %>
+          <div class="center">
+            <%= f.submit "登录", class: "text-center btn btn-primary fa fa-user-md" %>
+          </div>
+          <% end %>
+          <hr>
+          <h4>新用户?
+            <%= link_to "立即注册!", signup_path %></h4>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /#content -->

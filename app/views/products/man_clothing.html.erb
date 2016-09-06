@@ -1,0 +1,204 @@
+<body>
+  <div id="all">
+    <div id="content">
+      <div class="container">
+        <div class="col-md-12">
+          <ul class="breadcrumb">
+            <li><%= link_to '首页', root_url %></li>
+            <li>男装</li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <!-- *** MENUS AND FILTERS ***
+ _________________________________________________________ -->
+          <div class="panel panel-default sidebar-menu">
+
+            <div class="panel-heading">
+              <h3 class="panel-title">产品分类</h3>
+            </div>
+
+            <div class="panel-body">
+              <ul class="nav nav-pills nav-stacked category-menu">
+                <li class="active">
+                  <a href="#">男士
+                    <span class="badge pull-right"><%= Product.man.count %></span>
+                  </a>
+                  <ul>
+                    <li>
+                      <%= link_to '所有男士商品', man_products_products_path %>
+                    </li>
+                    <li>
+                      <%= link_to '休闲裤', man_pants_products_path %>
+                    </li>
+                    <li>
+                      <%= link_to '短袖', man_shirt_products_path %>
+                    </li>
+                    <li>
+                      <%= link_to '登山鞋', man_hiking_products_path %>
+                    </li>
+                    <li>
+                      <%= link_to '休闲鞋', man_casual_products_path %>
+                    </li>
+                  </ul>
+                </li>
+                <li class="active">
+                  <a href="category.html">女士
+                    <span class="badge pull-right"><%= Product.women.count %></span>
+                  </a>
+                  <ul>
+                    <li>
+                      <%= link_to '所有女士商品', women_products_products_path %>
+                    </li>
+                    <li>
+                      <%= link_to '休闲裤', women_pants_products_path %>
+                    </li>
+                    <li>
+                      <%= link_to '短袖', women_shirt_products_path %>
+                    </li>
+                    <li>
+                      <%= link_to '登山鞋', women_hiking_products_path %>
+                    </li>
+                    <li>
+                      <%= link_to '休闲鞋', women_casual_products_path %>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="banner">
+            <a href="#">
+              <img src="/assets/banner.jpg" alt="sales 2014" class="img-responsive">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-9">
+          <div class="box">
+            <h1>男装</h1>
+            <p>In our Ladies department we offer wide selection of the best products we have found and carefully selected worldwide.</p>
+          </div>
+
+          <!-- <div class="box info-bar">
+            <div class="row">
+              <div class="col-sm-12 col-md-4 products-showing">
+                Showing
+                <strong>12</strong>
+                of
+                <strong>25</strong>
+                products
+              </div>
+
+              <div class="col-sm-12 col-md-8  products-number-sort">
+                <div class="row">
+                  <form class="form-inline">
+                    <div class="col-md-6 col-sm-6">
+                      <div class="products-number">
+                        <strong>Show</strong>
+                        <a href="#" class="btn btn-default btn-sm btn-primary">12</a>
+                        <a href="#" class="btn btn-default btn-sm">24</a>
+                        <a href="#" class="btn btn-default btn-sm">All</a>
+                        products
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <div class="products-sort-by">
+                        <strong>Sort by</strong>
+                        <select name="sort-by" class="form-control">
+                          <option>Price</option>
+                          <option>Name</option>
+                          <option>Sales first</option>
+                        </select>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <div class="row products">
+            <% @man_clothing.each do |man| %>
+
+            <div class="col-md-4 col-sm-6">
+              <div class="product">
+                <div class="flip-container">
+                  <div class="flipper">
+                    <div class="front">
+                      <a href="detail.html">
+                        <%= image_tag(man.image_url, alt: "加载失败", class: "img-responsive") %>
+                      </a>
+                    </div>
+                    <div class="back">
+                      <a href="detail.html">
+                        <%= image_tag(man.image_url, alt: "加载失败", class: "img-responsive") %>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <a href="detail.html" class="invisible">
+                  <%= image_tag(man.image_url, alt: "加载失败", class: "img-responsive") %>
+                </a>
+                <div class="text">
+                  <h3>
+                    <a href="detail.html"><%= man.title %></a>
+                  </h3>
+                  <p class="price"><%= sprintf("￥%0.02f", man.price) %></p>
+                  <p class="buttons">
+                    <a href="detail.html" class="btn btn-default">查看详情</a>
+                    <a href="basket.html" class="btn btn-primary">
+                      <i class="fa fa-shopping-cart"></i>加入购物车</a>
+                  </p>
+                </div>
+                <!-- /.text -->
+              </div>
+              <!-- /.product -->
+            </div>
+            <% end %>
+            <!-- /.col-md-4 -->
+          </div>
+          <!-- /.products -->
+
+          <div class="pages">
+
+            <p class="loadMore">
+              <a href="#" class="btn btn-primary btn-lg">
+                <i class="fa fa-chevron-down"></i>
+                Load more</a>
+            </p>
+
+            <ul class="pagination">
+              <li>
+                <a href="#">&laquo;</a>
+              </li>
+              <li class="active">
+                <a href="#">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+              <li>
+                <a href="#">4</a>
+              </li>
+              <li>
+                <a href="#">5</a>
+              </li>
+              <li>
+                <a href="#">&raquo;</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <!-- /.col-md-9 -->
+      </div>
+      <!-- /.container -->
+    </div>
+  </div>
+  <!-- /#all -->
+</body>

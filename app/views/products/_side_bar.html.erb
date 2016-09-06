@@ -1,0 +1,61 @@
+<div class="panel panel-default sidebar-menu">
+
+  <div class="panel-heading">
+    <h3 class="panel-title">产品分类</h3>
+  </div>
+
+  <div class="panel-body">
+    <ul class="nav nav-pills nav-stacked category-menu">
+      <li class="active">
+        <a href="#">男士
+          <span class="badge pull-right"><%= Product.man.count %></span>
+        </a>
+        <ul>
+          <li>
+            <%= link_to '所有男士商品', man_products_products_path %>
+          </li>
+          <li>
+            <%= link_to '休闲裤', man_pants_products_path %>
+          </li>
+          <li>
+            <%= link_to '短袖', man_shirt_products_path %>
+          </li>
+          <li>
+            <%= link_to '登山鞋', man_hiking_products_path %>
+          </li>
+          <li>
+            <%= link_to '休闲鞋', man_casual_products_path %>
+          </li>
+        </ul>
+      </li>
+      <li class="active">
+        <a href="category.html">女士
+          <span class="badge pull-right"><%= Product.women.count %></span>
+        </a>
+        <ul>
+          <li>
+            <%= link_to '所有女士商品', women_products_products_path %>
+          </li>
+          <li>
+            <%= link_to '休闲裤', women_pants_products_path %>
+          </li>
+          <li>
+            <%= link_to '短袖', women_shirt_products_path %>
+          </li>
+          <li>
+            <%= link_to '登山鞋', women_hiking_products_path %>
+          </li>
+          <li>
+            <%= link_to '休闲鞋', women_casual_products_path %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+</div>
+<div class="banner">
+  <a href="#">
+    <img src="/assets/banner.jpg" alt="sales 2014" class="img-responsive">
+  </a>
+</div>
