@@ -23,7 +23,7 @@
           </div>
 
           <div class="row products">
-            <% @man_hiking.each do |f| %>
+            <% @man_hiking.each do |product| %>
 
             <div class="col-md-4 col-sm-6">
               <div class="product">
@@ -31,28 +31,27 @@
                   <div class="flipper">
                     <div class="front">
                       <a href="detail.html">
-                        <%= image_tag(f.image_url, alt: "加载失败", class: "img-responsive") %>
+                        <%= image_tag(product.image_url, alt: "加载失败", class: "img-responsive") %>
                       </a>
                     </div>
                     <div class="back">
                       <a href="detail.html">
-                        <%= image_tag(f.image_url, alt: "加载失败", class: "img-responsive") %>
+                        <%= image_tag(product.image_url, alt: "加载失败", class: "img-responsive") %>
                       </a>
                     </div>
                   </div>
                 </div>
                 <a href="detail.html" class="invisible">
-                  <%= image_tag(f.image_url, alt: "加载失败", class: "img-responsive") %>
+                  <%= image_tag(product.image_url, alt: "加载失败", class: "img-responsive") %>
                 </a>
                 <div class="text">
                   <h3>
-                    <a href="detail.html"><%= f.title %></a>
+                    <a href="detail.html"><%= product.title %></a>
                   </h3>
-                  <p class="price"><%= sprintf("￥%0.02f", f.price) %></p>
+                  <p class="price"><%= sprintf("￥%0.02f", product.price) %></p>
                   <p class="buttons">
                     <a href="detail.html" class="btn btn-default">查看详情</a>
-                    <a href="basket.html" class="btn btn-primary">
-                      <i class="fa fa-shopping-cart"></i>加入购物车</a>
+                    <%= button_to '加入购物车', line_items_path(product_id: product), class: "btn btn-primary"%>
                   </p>
                 </div>
                 <!-- /.text -->

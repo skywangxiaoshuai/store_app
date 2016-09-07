@@ -541,6 +541,7 @@ h1 {
   font-size: 18px;
   font-weight: 700;
   height: 20px;
+  margin-bottom: 5px;
   text-align: center;
   overflow: hidden;
 }
@@ -551,16 +552,21 @@ h1 {
   font-size: 14px;
   text-align: center;
   font-weight: 300;
+  margin-bottom: 5px;
 }
 #content .product .text p.price del {
   color: #999999;
+  margin-bottom: 5px;
 }
 #content .product .text .buttons {
   clear: both;
+  margin-bottom: 5px;
   text-align: center;
 }
 #content .product .text .buttons .btn {
-  margin-bottom: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  text-align: center;
 }
 #content .banner {
   margin-bottom: 30px;

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts do
+    collection do
+      delete :delete_line_item
+    end
+  end
   resources :products do
     collection do
       get :man_products

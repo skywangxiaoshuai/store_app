@@ -39,9 +39,15 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'thin'
   gem 'factory_girl_rails', '~> 4.0'
+
   # For debugger
-  gem 'pry-rails', '~> 0.3.2'
-  gem 'pry-doc', '~> 0.8.0'
+  gem "pry-rails", "~> 0.3.2"
+
+  gem 'pry-doc', "~> 0.8.0"
+
+  # For ruby2.0 use byebug instead of debugger
+  gem 'pry-byebug', "~> 2.0.0"
+
 end
 
 group :development do

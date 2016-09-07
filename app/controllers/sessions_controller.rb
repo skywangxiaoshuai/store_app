@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
+    session[:cart_id] = nil
     current_user = nil
     redirect_to root_url
   end
